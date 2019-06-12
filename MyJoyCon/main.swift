@@ -68,7 +68,7 @@ let matchingCallback: IOHIDDeviceCallback = {context, result, sender, device in
             }
         }
     }
-    let context = UnsafeMutableRawPointer.allocate(bytes: 1, alignedTo: 4)
+    let context = UnsafeMutableRawPointer.allocate(byteCount: 1, alignment: 4)
     context.storeBytes(of: name == rightName, as: Bool.self)
     IOHIDDeviceRegisterInputValueCallback(device, callback, context)
 }
